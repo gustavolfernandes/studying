@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../Storebook.Domain/Storebook.Domain.csproj" />
+  <Project Path="../Storebook.Infra/Storebook.Infra.csproj" />
+  <Project Path="../Storebook.Test/Storebook.Test.csproj" />
+  <Project Path="Storebook.Api.csproj" />
+</Solution>
