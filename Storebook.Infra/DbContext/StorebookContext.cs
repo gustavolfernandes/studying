@@ -21,9 +21,9 @@ public sealed partial class StorebookContext : DbContext
             .SelectMany(e => e.GetForeignKeys())
             .ForEach(PreventCascade);
 
-        MapLivros(modelBuilder);
+        MapBooks(modelBuilder);
 
-        modelBuilder.SeedLivros();
+        modelBuilder.SeedBooks();
     }
 
     private void PreventCascade(IMutableForeignKey fk)

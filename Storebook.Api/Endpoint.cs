@@ -1,6 +1,7 @@
-﻿using Storebook.Api.Endpoints.Livros.AtualizarLivroEndpoint;
-using Storebook.Api.Endpoints.Livros.ObterLivroEndpoint;
-using Storebook.Application.Livros.ListarLivrosEndpoint;
+﻿using Storebook.Api.Endpoints.Books.RemoveBookEndpoint;
+using Storebook.Api.Endpoints.Books.GetBookEndpoint;
+using Storebook.Application.Books.ListBooksEndpoint;
+using Storebook.Api.Endpoints.Books.AddBookEndpoint;
 
 namespace Storebook;
 
@@ -9,13 +10,13 @@ public static class Endpoint
     public static void MapEndpoints(this WebApplication app)
     {
         var endpoints = app
-            .MapGroup("/livros")
-            .WithTags("Livros")
-            .MapEndpoint<AdicionarLivroEndpoint>()
-            .MapEndpoint<ObterLivroEndpoint>()
-            .MapEndpoint<RemoverLivroEndpoint>()
-            .MapEndpoint<ListarLivrosEndpoint>()
-            .MapEndpoint<AtualizarLivroEndpoint>();
+            .MapGroup("/books")
+            .WithTags("Books")
+            .MapEndpoint<AddBookEndpoint>()
+            .MapEndpoint<GetBookEndpoint>()
+            .MapEndpoint<RemoveBookEndpoint>()
+            .MapEndpoint<ListBooksEndpoint>()
+            .MapEndpoint<UpdateBookEndpoint>();
     }
 
     private static IEndpointRouteBuilder MapEndpoint<TEndpoint>(this IEndpointRouteBuilder app)

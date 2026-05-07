@@ -20,7 +20,7 @@ builder.Services.AddDbContext<StorebookContext>(options =>
         x.MigrationsAssembly("Storebook.Infra");
     });
 });
-builder.Services.AddScoped<ILivrosRepository, LivrosRepository>();
+builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();

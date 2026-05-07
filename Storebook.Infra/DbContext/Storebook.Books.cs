@@ -5,41 +5,41 @@ namespace Storebook.Infra;
 
 public sealed partial class StorebookContext : DbContext
 {
-    public DbSet<Livro> Livros { get; set; } = default!;
-    private static void MapLivros(ModelBuilder model)
+    public DbSet<Book> Books { get; set; } = default!;
+    private static void MapBooks(ModelBuilder model)
     {
-        model.Entity<Livro>(map =>
+        model.Entity<Book>(map =>
         {
             map.Property(l => l.Id).HasStronglyTypedIdConversion().ValueGeneratedOnAdd();
-            map.Property(l => l.Titulo)
+            map.Property(l => l.Title)
                    .HasMaxLength(200)
                    .IsRequired();
 
-            map.Property(l => l.Autor)
+            map.Property(l => l.Author)
                    .HasMaxLength(150)
                    .IsRequired();
 
-            map.Property(l => l.Editora)
+            map.Property(l => l.Publisher)
                    .HasMaxLength(100)
                    .IsRequired();
 
-            map.Property(l => l.AnoPublicacao)
+            map.Property(l => l.PublicationYear)
                    .IsRequired();
 
-            map.Property(l => l.QuantidadePaginas)
+            map.Property(l => l.PageCount)
                    .IsRequired();
 
-            map.Property(l => l.QuantidadeEstoque)
+            map.Property(l => l.StockQuantity)
                    .IsRequired();
 
-            map.Property(l => l.DataCadastro)
+            map.Property(l => l.CreatedOn)
                    .IsRequired();
 
-            map.Property(l => l.Ativo)
+            map.Property(l => l.Active)
                    .IsRequired();
 
-            map.HasIndex(l => l.Titulo).IsUnique();
-            map.HasIndex(l => l.Autor);
+            map.HasIndex(l => l.Title).IsUnique();
+            map.HasIndex(l => l.Author);
         });
     }
 }

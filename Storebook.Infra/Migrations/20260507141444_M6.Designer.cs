@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Storebook.Infra;
 
@@ -11,9 +12,11 @@ using Storebook.Infra;
 namespace Storebook.Infra.Migrations
 {
     [DbContext(typeof(StorebookContext))]
-    partial class StorebookContextModelSnapshot : ModelSnapshot
+    [Migration("20260507141444_M6")]
+    partial class M6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
